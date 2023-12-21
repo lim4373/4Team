@@ -1,0 +1,193 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  max-width: 375px;
+  height: 734px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  background-color: #ffffff;
+  overflow: auto;
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+      justify-content: center;
+      flex-direction: column;
+      align-items: center; */
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+#wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  width: 375px;
+  height: 78px;
+  margin: 0 auto;
+  position: relative;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #ffffff;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin-top: 36px;
+  margin-bottom: 44px;
+}
+
+.profile-myprofile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-myprofile__image {
+  width: 56px;
+  height: 56px;
+}
+
+.profile-myprofile__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.profile-myprofile__info-user {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+#mbti {
+  background-color: #5617db;
+  border-radius: 20px;
+  width: 40px;
+  height: 21px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 21px;
+  margin-left: 0px;
+}
+
+.profile-myprofile__info-user span {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+#profile-major {
+  font-size: 12px;
+  font-weight: 400;
+  color: #525252;
+}
+
+.profile-myprofile img:last-child {
+  width: 9px;
+  height: 13px;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.profile-roommate {
+  width: auto;
+  height: 49px;
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  align-items: center;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-top: 31px;
+  margin-bottom: 14px;
+}
+
+.profile-roommate__image {
+  width: 15px;
+  height: 15px;
+}
+
+.profile-roommate span {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 11px;
+}
+
+#profile-roommate__name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.profile-menu {
+  font-size: 16px;
+  font-weight: 400;
+  color: #515151;
+  margin-bottom: 45px;
+}
+/* 네비게이션 바 디자인 설정 */
+.menu {
+  width: 375px;
+  height: 78px;
+  margin: 0px;
+  position: fixed;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #ffffff;
+  z-index: 1000; /* 다른 요소 위에 표시 / 숫자가 클수록 맨 위로 보여주게 함 */
+  bottom: 0;
+  /*(문제점 2) 이코드 있으면 밑에 고정되지만 화면이 축소될 때 밑에 딱 붙어서 고정됨*/
+  /*일단은 개발자 모드에서 핸드폰 사이즈로 봤을 때는 밑에 고정되는게 잘 되어서 일단은 이걸로 둠 */
+}
+
+.menu-details {
+  margin-top: 17px;
+  margin-bottom: 13px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.menu-details li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.homebtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 47px;
+}
+
+.matebtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 48px;
+}
+
+.communitybtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 48px;
+}
+/* 여기까지는 네비게이션 바 디자인 설정 고정 - 건들지 말기 */

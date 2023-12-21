@@ -1,0 +1,40 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+  overflow: hidden;
+  justify-content: center;
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  max-width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  background-color: #5617db;
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; */
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+#logo {
+  margin-top: 374px;
+  margin-left: 71px;
+  margin-bottom: 385px;
+  margin-right: 81px;
+}
+
+/* #logo {
+  margin-top: 311px;
+  margin-left: 95px;
+  margin-bottom: 311px;
+  margin-right: 94px;
+} */

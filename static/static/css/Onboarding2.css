@@ -1,0 +1,49 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  position: relative;
+  max-width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  background-color: #5617db;
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; */
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+#nextpage {
+  z-index: 100;
+}
+
+#Onboarding {
+  width: 375px;
+  height: 812px; /* 이미지의 높이에 맞게 조절 */
+  background: url("../images/onboarding2.png") no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+#nextpage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 375px;
+  height: 89px;
+  z-index: 100;
+}

@@ -1,0 +1,515 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  max-width: 375px;
+  height: 1650px;
+  /* height: 734px; */
+  margin: 0 auto;
+  background-color: #ffffff;
+  /* overflow: auto; */
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; */
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+#wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  width: 375px;
+  height: 78px;
+  margin: 0 auto;
+  position: relative;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #ffffff;
+}
+
+header img {
+  width: 113.77551px;
+  height: 25px;
+  margin-top: 25px;
+  margin-left: 24px;
+}
+
+.user-mood {
+  margin-top: 36px;
+  margin-bottom: 33px;
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-mood__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  font-size: 22px;
+  font-weight: 500;
+  flex-direction: column;
+}
+
+.mood-select-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1f7fc;
+  width: 124px;
+  height: 40px;
+  border: #c5edf6;
+  border-radius: 40px;
+}
+
+.mood-select-btn :first-child {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.mood-select-btn :last-child {
+  font-size: 8px;
+  margin-left: 14px;
+  color: #b3e4ef;
+}
+
+.btn-list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 31px;
+}
+
+.btn-list__btn {
+  display: flex;
+  flex-direction: column;
+  width: 89px;
+  height: 83px;
+  border: 1px solid #e9e9e9;
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-list__btn img {
+  margin-top: 20px;
+  width: 24px;
+  height: 24px;
+}
+
+.btn-list__btn span {
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.gray-area {
+  background-color: #fafafa;
+  padding-left: 24px;
+  padding-right: 20px;
+  padding-top: 28px;
+  padding-bottom: 25px;
+}
+
+.gray-area__title {
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.date {
+  color: #6b6b6b;
+  font-weight: 400;
+}
+
+.todolist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todolist__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.todolist-content {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 13px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.todolist-content__title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d2d2d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.todolist-content__title button {
+  background-color: #5617db;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 8px !important;
+  font-weight: 500;
+  padding: 5px 8px;
+}
+
+.todolist-content__time {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.todolist-content__time img {
+  width: 7px;
+  height: 9px;
+  margin-right: 5px;
+}
+
+.todolist-content__time span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #414141;
+}
+
+.todolist-content__time span:last-child {
+  font-size: 8px;
+  font-weight: 400;
+  color: #878585;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.todolist-content__bar {
+  width: 271px;
+  height: 8px;
+  border: 0.0125em solid #c8c8c8;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todolist-content__bar__color {
+  background-image: linear-gradient(to right, #5617db, #cbb2ff);
+  width: 266px;
+  height: 6px;
+  border-radius: 90px;
+}
+
+.scroll-bar {
+  width: 3px;
+  height: 271px;
+  background-color: #ededed;
+  border-radius: 40px;
+}
+
+.todolist-roommate__title {
+  margin-top: 32px;
+  margin-bottom: 30px;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.todolist-roommate__title div {
+  width: 34px;
+  height: 17px;
+  background-color: #5617db;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+  margin-right: 15px;
+}
+
+.todolist-roommate__title span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.todolist-roommate__list {
+  margin-left: 24px;
+  display: flex;
+  overflow: auto;
+  margin-bottom: 38px;
+}
+
+.todolist-roommate__list::-webkit-scrollbar {
+  display: none;
+}
+
+.todolist-roommate__content {
+  width: 122px;
+  height: 170px;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.exit-btn {
+  width: 13px;
+  height: 13px;
+  margin-right: 13px;
+  margin-left: auto;
+  margin-top: 16px;
+}
+
+.roommate-todo-image {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 14px;
+}
+
+.todolist-roommate__content span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+.todolist-roommate__content button {
+  width: 104px;
+  height: 24px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  border: none;
+  font-size: 9px;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.purple-area {
+  background-color: #5617db;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 31px;
+}
+
+.calendar-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.calendar-title span {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.calendar-title__btn {
+  background-color: #ffffff;
+  width: 25px;
+  height: 21px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 0px;
+  margin-left: auto;
+}
+.calendar-title__btn:last-child {
+  margin-left: 14px;
+}
+
+.calendar-title__btn img {
+  width: 4px;
+  height: 5px;
+}
+
+.calendar-title__btn span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.calendar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-date__selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4512b0;
+  width: 41px;
+  height: 66px;
+  border-radius: 4px;
+}
+
+.calendar-date__selected span {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.calendar-date__selected span:last-child {
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 6px;
+}
+
+.calendar-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 66px;
+}
+
+.calendar-date span {
+  color: #acacac;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.calendar-date span:last-child {
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 6px;
+}
+
+.todaytask {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-top: 32px;
+  margin-left: -24px;
+  width: 375px;
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.todaytask div:last-child {
+  margin-bottom: 44px;
+}
+
+.todaytask__task {
+  display: flex;
+  flex-direction: column;
+  border: #eeeeee solid 1px;
+  border-radius: 10px;
+  width: 65%;
+  height: 68px;
+  padding-left: 79px;
+  margin-bottom: 14px;
+}
+
+.todaytask__task span:first-child {
+  display: flex;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.todaytask__time {
+  display: flex;
+  align-items: center;
+  margin-top: 9px;
+  margin-bottom: 14px;
+}
+
+.todaytask__time-flag {
+  width: 7px;
+  height: 9px;
+  margin-right: 11px;
+}
+
+.todaytask__time span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #414141;
+}
+
+/* 네비게이션 바 디자인 설정 */
+.menu {
+  width: 375px;
+  height: 78px;
+  margin: 0px;
+  position: fixed;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #ffffff;
+  z-index: 1000; /* 다른 요소 위에 표시 / 숫자가 클수록 맨 위로 보여주게 함 */
+  bottom: 0;
+  /*(문제점 2) 이코드 있으면 밑에 고정되지만 화면이 축소될 때 밑에 딱 붙어서 고정됨*/
+  /*일단은 개발자 모드에서 핸드폰 사이즈로 봤을 때는 밑에 고정되는게 잘 되어서 일단은 이걸로 둠 */
+}
+
+.menu-details {
+  margin-top: 17px;
+  margin-bottom: 13px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.menu-details li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.homebtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 47px;
+}
+
+.matebtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 48px;
+}
+
+.communitybtn {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 48px;
+}
+/* 여기까지는 네비게이션 바 디자인 설정 고정 - 건들지 말기 */

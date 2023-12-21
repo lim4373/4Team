@@ -1,0 +1,278 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  max-width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  background-color: #f6f4f4;
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+                justify-content: center;
+                flex-direction: column;
+                align-items: center; */
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+/* 로고 디자인 */
+#logo {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 198px;
+  padding-top: 111px;
+  padding-left: 116.96px;
+  padding-right: 116.96px;
+  padding-bottom: 56px;
+  background-color: #ffffff;
+}
+
+/* 아이디 디자인 */
+#id {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  /* display: flex; */
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 80px;
+  padding-left: 20px;
+  background-color: #ffffff;
+}
+
+#id_title {
+  margin: 0px;
+  padding-right: 216.2px;
+  padding-bottom: 11px;
+  display: flex;
+  width: 138.801px;
+  color: #4a4a4a;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 138%; /* 19.32px */
+  letter-spacing: -0.42px;
+}
+
+#write_id {
+  width: 320px;
+  height: 45px;
+  padding-left: 12px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%; /* 19.32px */
+  letter-spacing: -0.42px;
+  outline: none; /* 클릭 시 외곽선 없애기 */
+}
+
+/* 비밀번호 디자인 */
+#pw {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  /* display: flex; */
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 110px;
+  padding-left: 20px;
+  background-color: #ffffff;
+}
+
+#pw_title {
+  margin: 0px;
+  padding-top: 30px;
+  /* padding-left: 20px; */
+  padding-right: 216.2px;
+  padding-bottom: 11px;
+  display: flex;
+  width: 138.801px;
+  color: #4a4a4a;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 138%; /* 19.32px */
+  letter-spacing: -0.42px;
+}
+
+#write_pw {
+  width: 320px;
+  height: 45px;
+  padding-left: 12px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%; /* 19.32px */
+  letter-spacing: -0.42px;
+  outline: none; /* 클릭 시 외곽선 없애기 */
+}
+
+/* 버튼 디자인 */
+.btn {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  /* display: flex; */
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 106px;
+  padding-left: 20px;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#btnDisabled {
+  margin-top: 46px;
+  padding: 0px;
+  width: 335px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #d9d9d9;
+  border: none;
+  /* flex-direction: column;*/
+  /* text-align: center; */
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 138%; /* 22.08px */
+  letter-spacing: -0.48px;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+#btnActive {
+  margin-top: 46px;
+  padding: 0px;
+  width: 335px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #5617db;
+  border: none;
+  /* flex-direction: column;*/
+  /* text-align: center; */
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 138%; /* 22.08px */
+  letter-spacing: -0.48px;
+  cursor: pointer;
+}
+/* 버튼 디자인 */
+
+/* 계정 찾기 디자인 */
+#lost {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  /* display: flex; */
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 37px;
+  padding-top: 16px;
+  padding-left: 118px;
+  padding-right: 118.2px;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+}
+/* 계정 찾기 디자인 */
+
+#icon {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 184px;
+  padding-left: 118px;
+  padding-right: 115px;
+  padding-top: 146px;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#kakao {
+  padding-right: 9px;
+}
+
+#google {
+  padding-right: 9px;
+}
+
+#another_way {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 97px;
+  padding-left: 128.88px;
+  padding-right: 129.21px;
+  padding-top: 39px;
+  padding-bottom: 43px;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#lost > a {
+  text-decoration: none;
+  color: #777;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 138%; /* 20.7px */
+  letter-spacing: -0.45px;
+}
+
+#another_way > a {
+  text-decoration: none;
+  color: #535353;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 138%; /* 15.18px */
+  letter-spacing: -0.33px;
+}

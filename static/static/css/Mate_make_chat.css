@@ -1,0 +1,265 @@
+* {
+  /* All */
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#wrapper {
+  max-width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
+        justify-content: center;
+        flex-direction: column;
+        align-items: center; */
+}
+
+p {
+  margin: 0px;
+}
+/* 여기까지는 웹앱 사이즈 고정 */
+
+#title {
+  box-sizing: border-box;
+  /* 이 코드가 있어야 내가 원하는 높이 안에 padding값과 컨텐츠들을 넣을 수 있다. */
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  width: 375px;
+  height: 95px;
+  padding-top: 71px;
+  padding-left: 20px;
+}
+#back {
+  padding-top: 3px;
+  padding-right: 106px;
+}
+
+#title_center {
+  color: #2c2c2c;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+#make_name {
+  box-sizing: border-box;
+  width: 375px;
+  height: 74px;
+}
+
+#name {
+  padding-top: 50px;
+  padding-left: 20px;
+  width: 172px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #2d2d2d;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 172.222% */
+  letter-spacing: -0.72px;
+}
+
+#chat_name {
+  width: 375px;
+  height: 61px;
+  box-sizing: border-box;
+}
+
+#title_name {
+  margin-top: 23px;
+  margin-left: 20px;
+  width: 315px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #f6f6f6;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  outline: none; /* 클릭 시 외곽선 없애기 */
+  border: none;
+}
+
+#warning {
+  width: 375px;
+  height: 24px;
+  box-sizing: border-box;
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  padding-left: 20px;
+  padding-top: 12px;
+}
+#warnimg {
+  width: 9px;
+  height: 9px;
+}
+
+#warningtext {
+  width: 197px;
+  height: 12px;
+  padding-left: 9px;
+  color: #727272;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+#line1 {
+  border-top: 1px solid #e7e5e5;
+  margin: 32px 20px;
+}
+
+#line2 {
+  border-top: 1px solid #e7e5e5;
+  margin-top: 18.23px;
+  margin-bottom: 32px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#choose_btn {
+  width: 375px;
+  height: 51px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+#choose_title {
+  color: #2d2d2d;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 172.222% */
+  letter-spacing: -0.72px;
+}
+
+#btn {
+  width: 375px;
+  height: 292px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  /* padding-right: 8.18px; */
+}
+/* 초기 버튼 스타일 */
+.myButton {
+  border-radius: 6px;
+  border: 0.985px solid #e9e9e9;
+  width: 161.553px;
+  height: 37.362px;
+  flex-shrink: 0;
+  background: #fff;
+  color: #fff;
+  cursor: pointer;
+  color: rgba(45, 45, 45, 0.83);
+  font-family: Pretendard;
+  font-size: 11.821px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.473px;
+  margin-bottom: 13.77px;
+  margin-right: 11.82px;
+  padding-left: 16px;
+  text-align: left;
+}
+
+/* 클릭 시 버튼 스타일 변경 */
+.myButton.clicked {
+  border-radius: 6px;
+  border: 0.985px solid #5617db;
+  background: #fff;
+}
+
+#making {
+  width: 375px;
+  height: 70px;
+  margin: 0px;
+  position: fixed;
+  border-color: #5617db;
+
+  z-index: 1000; /* 다른 요소 위에 표시 / 숫자가 클수록 맨 위로 보여주게 함 */
+  bottom: 0;
+  /*(문제점 2) 이코드 있으면 밑에 고정되지만 화면이 축소될 때 밑에 딱 붙어서 고정됨*/
+  /*일단은 개발자 모드에서 핸드폰 사이즈로 봤을 때는 밑에 고정되는게 잘 되어서 일단은 이걸로 둠 */
+}
+
+#menu {
+  width: 375px;
+  height: 70px;
+  flex-shrink: 0;
+  border: none;
+  background-color: #5617db;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  padding: 23px 134px;
+}
+
+#usercheck {
+  width: 375px;
+  height: 171px;
+  box-sizing: border-box;
+  display: flex;
+  /* 이 코드가 있어야 나란히 정렬 가능 */
+  position: sticky;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+#user_title {
+  color: #2c2c2c;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  padding-right: 149px;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 팝업 창이 나타날 때의 애니메이션 */
+#popup.active {
+  transform: translate(-50%, -100%);
+}
