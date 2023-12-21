@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Profile.css') }}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="profile">
+        <span class="profile__title">프로필</span>
+        <div class="profile-myprofile">
+          <img
+            src="{{ url_for('static', filename='images/profile_img.png') }}"
+            alt=""
+            class="profile-myprofile__image"
+          />
+          <div class="profile-myprofile__info">
+            <div class="profile-myprofile__info-user">
+              <span id="mbti">ENFP</span>
+              <span>미정</span>
+            </div>
+            <div class="profile-myprofile__info-major">
+              <span id="profile-major">을지대학교 시각디자인전공</span>
+            </div>
+          </div>
+          <img src="{{ url_for('static', filename='images/profile_arrow_R.png') }}" alt="" />
+        </div>
+
+        <div class="profile-roommate">
+          <img
+            src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+            alt=""
+            class="profile-roommate__image"
+          />
+          <span>나의 룸메이트</span>
+          <span id="profile-roommate__name">을지대학교 산업디자인 손뉴림</span>
+        </div>
+
+        <span class="profile__title">계정 관리</span>
+
+        <span class="profile-menu">학교 인증</span>
+        <span class="profile-menu">메이트 해지하기</span>
+        <span class="profile-menu">비밀번호 변경</span>
+        <span class="profile-menu">회원탈퇴</span>
+        <span class="profile-menu">로그아웃</span>
+      </div>
+      <!-- 네비게이션 바 규격 설정 -->
+      <div class="menu">
+        <div class="menu-details">
+          <li class="homebtn">
+            <a href="{{ url_for('buttonHome') }}">
+              <img
+                src="{{ url_for('static', filename='images/todaybtn2.png') }}"
+                alt="투데이 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="matebtn">
+              <a href="{{ url_for('buttonMate') }}">
+              <img
+                src="{{ url_for('static', filename='images/matebtn2.png') }}"
+                alt="메이트 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="communitybtn">
+            <a href="{{ url_for('buttonCommunity') }}">
+              <img
+                src="{{ url_for('static', filename='images/communitybtn2.png') }}"
+                alt="커뮤니티 화면 버튼"
+                width="41px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="profilebtn">
+              <a href="{{ url_for('Profile') }}">
+              <img
+                src="{{ url_for('static', filename='images/profilebtn1.png') }}"
+                alt="프로필 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+        </div>
+      </div>
+      <!--  네비게이션 바 규격 설정 -->
+    </div>
+    <!-- <script src="../static/js/Splash.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Splash.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <a href="{{ url_for('Lmain') }}">
+        <img
+          id="logo"
+          src="{{ url_for('static', filename='images/splashlogo.png') }}"
+          alt="스플래쉬 로고"
+          width="223px"
+          height="49px"
+        />
+      </a>
+    </div>
+    <script>
+      // 3초(3000밀리초) 후에 다른 페이지로 이동
+      setTimeout(function () {
+        window.location.href = "{{ url_for('Lmain') }}";
+      }, 2000);
+    </script>
+  </body>
+</html>

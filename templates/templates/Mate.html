@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Mate.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="mate_start">
+        <p id="mate_title">메이트</p>
+        <div id="mate_right">
+          <img
+            src="{{ url_for('static', filename='images/no_mate_mark.png') }}"
+            alt="mark"
+            width="13px"
+            height="13px"
+          />
+        </div>
+        <p id="nomate">메이트가 아직 없어요.</p>
+      </div>
+
+      <!-- 사용자 정보 -->
+
+      <div id="user_infor">
+        <div id="box">
+          <div id="profile">
+            <div id="photo">
+              <img
+                <img src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필 사진"
+                width="16px"
+                height="16px"
+              />
+            </div>
+            <div id="name">
+              <p id="a">김미정</p>
+            </div>
+            <div id="grade">
+              <p id="a">시각디자인학과 4학년</p>
+            </div>
+            <div id="status">
+              <img
+                src="{{ url_for('static', filename='images/mate_status.png') }}"
+                alt="메이트 여부"
+                width="79px"
+                height="19px"
+              />
+            </div>
+          </div>
+          <div id="message">
+            <input type="text" id="status_message" />
+          </div>
+        </div>
+      </div>
+      <!-- 사용자 정보 -->
+
+      <!-- 진행중인 대화 보러 가기  -->
+      <div id="chating">
+        <a href="#">
+          <img
+            id="b"
+            src="{{ url_for('static', filename='images/chatting.png') }}"
+            alt="진행중인 대화 버튼"
+            width="335px"
+            height="50px"
+          />
+        </a>
+      </div>
+
+      <!-- 진행중인 대화 보러 가기 -->
+      <hr />
+
+      <!-- 위치 정보 -->
+      <div id="location">
+        <img
+          src="{{ url_for('static', filename='images/location.png') }}"
+          alt="위치 정보"
+          width="375px"
+          height="186px"
+        />
+      </div>
+      <!-- 위치 정보 -->
+
+      <!-- 채팅방 찾기 -->
+      <div id="find_mate">
+        <div class="container">
+          <p id="find_mate_title">메이트 찾기</p>
+          <a class="btn js-click-modal">필터설정</a>
+          <div class="modal">
+            <!-- <div class="header">This is a full-width modal with a title</div> -->
+            <div class="body">
+              <a class="btn js-close-modal"
+                ><img
+                  src="{{ url_for('static', filename='images/bar.png') }}"
+                  alt="닫기"
+                  width="55px"
+                  height="4px"
+              /></a>
+              <p>원하는 항목을 선택하세요.</p>
+              <div id="btn">
+                <button class="myButton" onclick="toggleColor(this)">
+                  비흡연자
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  도미니 대여
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  아침잠이 많아요
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  같이 심야 과제 선호
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  잠버릇이 심해요
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  주말마다 본가에 가요
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  공과 사는 구별해요
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  청소를 자주 해요
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  자기 관리 잘하시는
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  같이 운동하실 헬창분
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  저녁마다 같이 카페
+                </button>
+                <button class="myButton" onclick="toggleColor(this)">
+                  같은 학과는 싫어요
+                </button>
+              </div>
+              <script>
+                function toggleColor(button) {
+                  // 'clicked' 클래스의 존재 여부에 따라 토글
+                  if (button.classList.contains("clicked")) {
+                    button.classList.remove("clicked");
+                  } else {
+                    button.classList.add("clicked");
+                  }
+                }
+              </script>
+              <div class="choose_done">
+                <a class="btn js-close-modal">
+                  <button class="finish">선택 완료</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+          $(".js-click-modal").click(function () {
+            $(".container").addClass("modal-open");
+          });
+
+          $(".js-close-modal").click(function () {
+            $(".container").removeClass("modal-open");
+          });
+        </script>
+      </div>
+      <div id="open_chat">
+        <div id="entrance">
+          <div id="entrance_chatleft">
+            <div id="chatleft">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+            <div id="chatleft1">
+              <img
+                src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필"
+                width="12px"
+                height="12px"
+              />
+              사용자정보사용자정보
+            </div>
+          </div>
+          <div id="entrance_chatright">
+            <button id="e">입장하기</button>
+          </div>
+        </div>
+        <div id="entrance">
+          <div id="entrance_chatleft">
+            <div id="chatleft">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+            <div id="chatleft1">
+              <img
+                src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필"
+                width="12px"
+                height="12px"
+              />
+              사용자정보사용자정보
+            </div>
+          </div>
+          <div id="entrance_chatright">
+            <button id="e">입장하기</button>
+          </div>
+        </div>
+        <div id="entrance">
+          <div id="entrance_chatleft">
+            <div id="chatleft">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+            <div id="chatleft1">
+              <img
+                src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필"
+                width="12px"
+                height="12px"
+              />
+              사용자정보사용자정보
+            </div>
+          </div>
+          <div id="entrance_chatright">
+            <button id="e">입장하기</button>
+          </div>
+        </div>
+        <div id="entrance">
+          <div id="entrance_chatleft">
+            <div id="chatleft">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+            <div id="chatleft1">
+              <img
+                src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필"
+                width="12px"
+                height="12px"
+              />
+              사용자정보사용자정보
+            </div>
+          </div>
+          <div id="entrance_chatright">
+            <button id="e">입장하기</button>
+          </div>
+        </div>
+        <div id="entrance">
+          <div id="entrance_chatleft">
+            <div id="chatleft">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+            <div id="chatleft1">
+              <img
+                src="{{ url_for('static', filename='images/profile_roommate_img.png') }}"
+                alt="프로필"
+                width="12px"
+                height="12px"
+              />
+              사용자정보사용자정보
+            </div>
+          </div>
+          <div id="entrance_chatright">
+            <button id="e">입장하기</button>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div id="make_chat">
+        <a href="{{ url_for('mateMakeChat') }}">
+          <img
+            src="{{ url_for('static', filename='images/make_chat.png') }}"
+            alt="채팅 만들기"
+            width="335px"
+            height="50px"
+        /></a>
+      </div>
+
+      <!-- 채팅방 찾기 -->
+
+      <!-- 네비게이션 바 규격 설정 -->
+      <div class="menu">
+        <div class="menu-details">
+          <li class="homebtn">
+            <a href="{{ url_for('buttonHome') }}">
+              <img
+                src="{{ url_for('static', filename='images/todaybtn2.png') }}"
+                alt="투데이 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="matebtn">
+            <a href="{{ url_for('buttonMate') }}">
+              <img
+                src="{{ url_for('static', filename='images/matebtn1.png') }}"
+                alt="메이트 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="communitybtn">
+            <a href="{{ url_for('buttonCommunity') }}">
+              <img
+                src="{{ url_for('static', filename='images/communitybtn2.png') }}"
+                alt="커뮤니티 화면 버튼"
+                width="41px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="profilebtn">
+            <a href="{{ url_for('Profile') }}">
+            <img
+                src="{{ url_for('static', filename='images/profilebtn2.png') }}"
+                alt="프로필 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+        </div>
+      </div>
+      <!--  네비게이션 바 규격 설정 -->
+    </div>
+  </body>
+</html>

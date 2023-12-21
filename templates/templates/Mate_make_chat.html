@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Mate_make_chat.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="title">
+        <a href="{{ url_for('buttonMate') }}">
+          <img
+            id="back"
+            src="{{ url_for('static', filename='images/matebtn1.png') }}"
+            alt="뒤로가기"
+            width="10px"
+            height="18px"
+        />
+        </a>
+        <div id="title_center"><p>채팅방 만들기</p></div>
+      </div>
+
+      <div id="make_name">
+        <p id="name">채팅방 이름을 입력하세요</p>
+      </div>
+
+      <div id="chat_name">
+        <input type="text" id="title_name" />
+      </div>
+
+      <div id="warning">
+        <img
+          id="warnimg"
+          src="{{ url_for('static', filename='images/warning.png') }}"
+          alt="경고"
+          width="9px"
+          height="9px"
+        />
+        <div id="a">
+          <p id="warningtext">
+            비속어가 들어간 채팅방 이름은 제지될 수도 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="line1"></div>
+
+      <div id="choose_btn">
+        <p id="choose_title">원하는 항목을 선택하세요.</p>
+      </div>
+
+      <div id="btn">
+        <button class="myButton" onclick="toggleColor(this)">비흡연자</button>
+        <button class="myButton" onclick="toggleColor(this)">
+          도미니 대여
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          아침잠이 많아요
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          같이 심야 과제 선호
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          잠버릇이 심해요
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          주말마다 본가에 가요
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          공과 사는 구별해요
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          청소를 자주 해요
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          자기 관리 잘하시는
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          같이 운동하실 헬창분
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          저녁마다 같이 카페
+        </button>
+        <button class="myButton" onclick="toggleColor(this)">
+          같은 학과는 싫어요
+        </button>
+      </div>
+      <script>
+        function toggleColor(button) {
+          // 'clicked' 클래스의 존재 여부에 따라 토글
+          if (button.classList.contains("clicked")) {
+            button.classList.remove("clicked");
+          } else {
+            button.classList.add("clicked");
+          }
+        }
+      </script>
+
+      <div id="line2"></div>
+
+      <div id="making">
+        <a href="{{ url_for('mateMakeChat') }}">
+          <button id="menu" onclick="changePage()">채팅방 만들기</button></a
+        >
+      </div>
+      <!-- <script>
+        function changePage() {
+          // 새로운 페이지로 이동
+          window.location.href = "./"; // 원하는 URL로 변경
+        }
+      </script> -->
+
+      <div id="usercheck">
+        <p id="user_title">인증된 사용자만 입장가능</p>
+        <img
+          src="{{ url_for('static', filename='images/checkbtn.png') }}"
+          alt="checkbtn"
+          width="38px"
+          height="21px"
+        />
+      </div>
+    </div>
+  </body>
+</html>

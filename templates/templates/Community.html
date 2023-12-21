@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Community.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- header 규격 설정 -->
+      <div id="header">
+        <p id="header_left">카테고리</p>
+        <div id="header_right">
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='images/communityglass.png') }}"
+              width="25px"
+              height="23px"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- header 규격 설정 -->
+
+      <!-- 공지사항 규격 설정 -->
+      <div id="content1">
+        <div class="slider">
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='images/announcement1.png') }}"
+              alt="공지사항 1"
+              width="375px"
+              height="228px"
+              class="active"
+              id="announce1"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='images/announcement2.png') }}"
+              alt="공지사항 2"
+              width="375px"
+              height="228px"
+              id="announce2"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='images/announcement3.png') }}"
+              alt="공지사항 3"
+              width="375px"
+              height="228px"
+              id="announce3"
+            />
+          </a>
+
+          <div class="slider-button">
+            <button
+              id="b1"
+              class="off"
+              onclick="showImageById('announce1', 'b1')"
+            ></button>
+            <button
+              id="b2"
+              class="off"
+              onclick="showImageById('announce2', 'b2')"
+            ></button>
+            <button
+              id="b3"
+              class="off"
+              onclick="showImageById('announce3', 'b3')"
+            ></button>
+          </div>
+        </div>
+        <script>
+          const slider = document.querySelector(".slider");
+          const images = slider.querySelectorAll("img");
+          const buttons = slider.querySelectorAll(".slider-button button");
+
+          function showImageById(imageId, buttonId) {
+            const targetIndex = Array.from(images).findIndex(
+              (img) => img.id === imageId
+            ); // 타겟 이미지의 인덱스 가져오기
+
+            images.forEach((img) => {
+              img.classList.remove("active");
+            });
+
+            buttons.forEach((button) => {
+              button.classList.remove("on");
+            });
+
+            const image = document.getElementById(imageId);
+            const button = document.getElementById(buttonId);
+
+            image.classList.add("active");
+            button.classList.add("on");
+            currentImageIndex = targetIndex; // 타겟 이미지 인덱스로 업데이트
+          }
+
+          let currentImageIndex = 0;
+
+          function showImage(index) {
+            images.forEach((img, idx) => {
+              img.classList.remove("active");
+              buttons[idx].classList.remove("on");
+
+              if (idx === index) {
+                img.classList.add("active");
+                buttons[idx].classList.add("on");
+              }
+            });
+          }
+
+          function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+          }
+
+          showImage(currentImageIndex);
+          setInterval(nextImage, 2500);
+        </script>
+      </div>
+      <!-- 공지사항 규격 설정 -->
+
+      <hr />
+
+      <!-- 카테고리 버튼 규격 설정 -->
+      <div id="content2">
+        <div class="button-container" id="button-container">
+          <button
+            id="scroll-to-start-btn"
+            class="button button-clicked"
+            onclick="changeColorAndShowContent(this, 'all')"
+          >
+            전체 게시판
+          </button>
+          <!-- (문제점 1) 새로고침할 때마다 전체게시판 버튼이 다 보이지 않음 -->
+          <button
+            class="button"
+            onclick="changeColorAndShowContent(this, 'chat')"
+          >
+            잡담 나눠요
+          </button>
+          <button
+            class="button"
+            onclick="changeColorAndShowContent(this, 'request')"
+          >
+            부탁 드려요
+          </button>
+          <button
+            class="button"
+            onclick="changeColorAndShowContent(this, 'roommate')"
+          >
+            룸메 찾아요
+          </button>
+          <button
+            id="scroll-to-end-btn"
+            class="button"
+            onclick="changeColorAndShowContent(this, 'together')"
+          >
+            같이 해요
+          </button>
+        </div>
+      </div>
+
+      <!-- 카테고리에 대응하는 내용 -->
+      <div id="category-all" class="category-content">
+        <!-- 전체 게시판에 대한 내용 -->
+        <div id="a">
+          <p class="all_left">전체 게시판</p>
+          <div class="all_middle"></div>
+          <div class="all_arrow">
+            <a href="{{ url_for('buttonWrite') }}">
+              <img
+                src="{{ url_for('static', filename='images/rightarrow.png') }}"
+                width="7px"
+                height="14px"
+              />
+            </a>
+          </div>
+        </div>
+        
+
+        <div id="post-list">
+          {% for post in all_posts %}
+          <div class="post">
+            <p id="newpost">{{ post.title }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- (문제점 3) 새로고침을 하면 규격이 깨짐 -->
+
+      <div id="category-chat" class="category-content" style="display: none">
+        <!-- 잡담 나눠요에 대한 내용 -->
+        <div id="a">
+          <p class="all_left">잡담 나눠요</p>
+          <div class="all_middle"></div>
+          <div class="all_arrow">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/rightarrow.png') }}"
+                width="7px"
+                height="14px"
+              />
+            </a>
+          </div>
+        </div>
+        <div id="b">
+          <div id="post-list">
+            {% for post in chat_posts %}
+            <div class="post">
+              <p id="newpost">{{ post.title }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div id="category-request" class="category-content" style="display: none">
+        <!-- 부탁 드려요에 대한 내용 -->
+        <div id="a">
+          <p class="all_left">부탁 드려요</p>
+          <div class="all_middle"></div>
+          <div class="all_arrow">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/rightarrow.png') }}"
+                width="7px"
+                height="14px"
+              />
+            </a>
+          </div>
+        </div>
+        <div id="post-list">
+          {% for post in request_posts %}
+          <div class="post">
+            <p id="newpost">{{ post.title }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div
+        id="category-roommate"
+        class="category-content"
+        style="display: none"
+      >
+        <!-- 룸메 찾아요에 대한 내용 -->
+        <div id="a">
+          <p class="all_left">룸메 찾아요</p>
+          <div class="all_middle"></div>
+          <div class="all_arrow">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/rightarrow.png') }}"
+                width="7px"
+                height="14px"
+              />
+            </a>
+          </div>
+        </div>
+        <div id="post-list">
+          {% for post in roommate_posts %}
+          <div class="post">
+            <p id="newpost">{{ post.title }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div
+        id="category-together"
+        class="category-content"
+        style="display: none"
+      >
+        <!-- 같이 해요에 대한 내용 -->
+        <div id="a">
+          <p class="all_left">같이 해요</p>
+          <div class="all_middle"></div>
+          <div class="all_arrow">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/rightarrow.png') }}"
+                width="7px"
+                height="14px"
+              />
+            </a>
+          </div>
+        </div>
+        <div id="post-list">
+          {% for post in together_posts %}
+          <div class="post">
+            <p id="newpost">{{ post.title }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- 다른 카테고리에 대응하는 내용들... -->
+
+      <script>
+        function changeColorAndShowContent(button, category) {
+          // 클릭된 버튼의 배경색과 글자색 변경
+          button.style.backgroundColor = "#5617db";
+          button.style.color = "#fff";
+
+          // 모든 버튼에서 다른 버튼들의 스타일 초기화
+          var buttons = document.querySelectorAll(".button");
+          buttons.forEach(function (btn) {
+            if (btn !== button) {
+              btn.style.backgroundColor = "#fff";
+              btn.style.color = "#8b8b8b";
+            }
+          });
+
+          // 모든 카테고리 내용을 숨깁니다.
+          var allCategoryContents =
+            document.querySelectorAll(".category-content");
+          allCategoryContents.forEach(function (content) {
+            content.style.display = "none";
+          });
+
+          // 클릭한 카테고리에 대응하는 내용을 보이게 합니다.
+          var selectedCategoryContent = document.getElementById(
+            "category-" + category
+          );
+          if (selectedCategoryContent) {
+            selectedCategoryContent.style.display = "block";
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          // 페이지가 로드될 때 스크롤을 맨 위로 이동합니다.
+          window.scrollTo(0, 0);
+
+          // 맨 앞 버튼에 대해 스크롤 함수를 호출합니다.
+          document
+            .getElementById("scroll-to-start-btn")
+            .addEventListener("click", scrollToLeft);
+
+          // 맨 뒤 버튼에 대해 스크롤 함수를 호출합니다.
+          document
+            .getElementById("scroll-to-end-btn")
+            .addEventListener("click", scrollToRight);
+        });
+
+        // 클릭한 버튼의 배경색과 글자색 변경 및 카테고리 내용 표시 함수
+        function changeColorAndShowContent(button, category) {
+          // 클릭된 버튼의 배경색과 글자색 변경
+          button.style.backgroundColor = "#5617db";
+          button.style.color = "#fff";
+
+          // 모든 버튼에서 다른 버튼들의 스타일 초기화
+          var buttons = document.querySelectorAll(".button");
+          buttons.forEach(function (btn) {
+            if (btn !== button) {
+              btn.style.backgroundColor = "#fff";
+              btn.style.color = "#8b8b8b";
+            }
+          });
+
+          // 모든 카테고리 내용을 숨깁니다.
+          var allCategoryContents =
+            document.querySelectorAll(".category-content");
+          allCategoryContents.forEach(function (content) {
+            content.style.display = "none";
+          });
+
+          // 클릭한 카테고리에 대응하는 내용을 보이게 합니다.
+          var selectedCategoryContent = document.getElementById(
+            "category-" + category
+          );
+          if (selectedCategoryContent) {
+            selectedCategoryContent.style.display = "block";
+          }
+        }
+
+        // 스크롤을 가장 앞으로 이동시키는 함수
+        function scrollToLeft() {
+          // 버튼 컨테이너 엘리먼트를 가져옵니다.
+          var buttonContainer = document.getElementById("button-container");
+
+          // 버튼 컨테이너의 스크롤을 가장 앞으로 이동시킵니다.
+          buttonContainer.scrollTo({ left: 0, behavior: "smooth" });
+        }
+
+        // 스크롤을 가장 뒤로 이동시키는 함수
+        function scrollToRight() {
+          // 버튼 컨테이너 엘리먼트를 가져옵니다.
+          var buttonContainer = document.getElementById("button-container");
+
+          // 버튼 컨테이너의 스크롤을 가장 뒤로 이동시킵니다.
+          buttonContainer.scrollTo({
+            left: buttonContainer.scrollWidth,
+            behavior: "smooth",
+          });
+        }
+      </script>
+      <!-- 카테고리 버튼 규격 설정 -->
+
+      <!-- 글쓰기 버튼 규격 설정 -->
+      <div class="write_button">
+        <a href="{{ url_for('buttonWrite') }}">
+          <img
+            src="{{ url_for('static', filename='images/write_button.png') }}"
+            alt="글쓰기 버튼"
+            width="62px"
+            height="62px"
+          />
+        </a>
+      </div>
+      <!-- 글쓰기 버튼 규격 설정 -->
+
+      <!-- 네비게이션 바 규격 설정 -->
+      <div class="menu">
+        <div class="menu-details">
+          <li class="homebtn">
+            <a href="{{ url_for('buttonHome') }}">
+              <img
+                src="{{ url_for('static', filename='images/todaybtn2.png') }}"
+                alt="투데이 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="matebtn">
+            <a href="{{ url_for('buttonMate') }}">
+              <img
+                src="{{ url_for('static', filename='images/matebtn2.png') }}"
+                alt="메이트 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="communitybtn">
+             <a href="{{ url_for('buttonCommunity') }}">
+               <img
+                src="{{ url_for('static', filename='images/communitybtn1.png') }}"
+                alt="커뮤니티 화면 버튼"
+                width="41px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="profilebtn">
+            <a href="{{ url_for('Profile') }}">
+              <img
+                src="{{ url_for('static', filename='images/profilebtn2.png') }}"
+                alt="프로필 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+        </div>
+      </div>
+      <!— <!— 네비게이션 바 규격 설정 —> —>
+    </div>
+  </body>
+</html>

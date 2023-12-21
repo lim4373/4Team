@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_main.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="logo">
+        <a href="{{ url_for('Lmain') }}">
+          <img
+            id="logo_img"
+            src="{{ url_for('static', filename='images/splashlogo3.png') }}"
+            alt="스플래쉬 로고"
+            width="141.082px"
+            height="31px"
+          />
+        </a>
+      </div>
+      <form action="{{ url_for('Lmain_submit') }}" method="post" onsubmit="submitForm()">
+          <!-- 아이디 규격 설정 -->
+          <div id="id">
+            <div id="id_title">이름</div>
+            <input
+              type="text"
+              placeholder="아이디를 입력해 하세요."
+              id="write_id"
+              name="write_id"
+              oninput="checkInputs()"
+            />
+          </div>
+          <!-- 아이디 규격 설정 -->
+
+          <!-- 비밀번호 규격 설정 -->
+          <div id="pw">
+            <div id="pw_title">비밀번호</div>
+            <input
+              type="text"
+              placeholder="비밀번호를 입력해 주세요."
+              id="write_pw"
+              name="write_pw"
+              oninput="checkInputs()"
+            />
+          </div>
+          <!-- 비밀번호 규격 설정 -->
+
+          <!-- 버튼 규격 설정 -->
+          <div class="btn">
+              <button
+                type="submit"
+                class="confirm"
+                id="btnDisabled"
+                onclick="submitForm()"
+              >
+                로그인
+              </button>
+          </div>
+          <!-- 버튼 규격 설정 -->
+        </form>
+
+        <!-- 계정 잃어버렸나요? 설정 -->
+        <div id="lost">
+          <a href="#"> 계정을 잃어 버렸나요?</a>
+        </div>
+        <!-- 계정 잃어버렸나요? 설정 -->
+
+        <!-- 아이콘 규격 설정 -->
+        <div id="icon">
+          <div id="icon1">
+            <img
+              id="kakao"
+              src="{{ url_for('static', filename='images/kakao.png') }}"
+              alt="카카오 로고"
+              width="38px"
+              height="38px"
+            />
+            <img
+              id="google"
+              src="{{ url_for('static', filename='images/google.png') }}"
+              alt="구글 로고"
+              width="38px"
+              height="38px"
+            />
+            <img
+              id="naver"
+              src="{{ url_for('static', filename='images/naver.png') }}"
+              alt="네이버 로고"
+              width="38px"
+              height="38px"
+            />
+          </div>
+        </div>
+        <!-- 아이콘 규격 설정 -->
+
+        <div id="another_way">
+          <a href="{{ url_for('L1') }}"> 다른 방법으로 시작하기 </a>
+        </div>
+    </div>
+    <script>
+      function checkInputs() {
+        // 각각의 input 요소에서 값 가져오기
+        var input1Value = document.getElementById('write_id').value;
+        var input2Value = document.getElementById('write_pw').value;
+        var myButton = document.getElementsByClassName('confirm')[0];
+
+        // 두 input 중 하나라도 값이 있으면 버튼 활성화, 아니면 비활성화
+        if (input1Value.trim() !== '' && input2Value.trim() !== '') {
+          myButton.id="btnActive"
+          myButton.disabled = false;
+        } else {
+          myButton.id="btnDisabled"
+          myButton.disabled = true;
+        }
+      }
+    </script>
+  </body>
+</html>

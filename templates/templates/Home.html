@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <img src="{{ url_for('static', filename='images/home_logo.png') }}" alt="" />
+      </header>
+      <div class="user-mood">
+        <div class="user-mood__column">
+          <div class="text">
+            <div class="first-line">
+              <span class="user-name">
+                {% for post in user %}
+                    {{ post.Pname }}
+                {% endfor %}
+              </span>
+              <span>님.</span>
+            </div>
+            <div class="second-line">
+              <span>오늘 기분 어때요?</span>
+            </div>
+          </div>
+        </div>
+        <div class="user-mood__column">
+          <div class="mood-select-btn">
+            <span>😢 슬퍼요</span>
+            <span>▼</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-list">
+        <div class="btn-list__btn">
+          <img src="{{ url_for('static', filename='images/btn_img1.png') }}" alt="" />
+          <span>오늘 할일</span>
+        </div>
+        <div class="btn-list__btn">
+          <img src="{{ url_for('static', filename='images/btn_img2.png') }}" alt="" />
+          <span>룸메 할일</span>
+        </div>
+        <div class="btn-list__btn">
+          <img src="{{ url_for('static', filename='images/btn_img3.png') }}" alt="" />
+          <span>내일 할일</span>
+        </div>
+      </div>
+
+      <div class="gray-area">
+        <div class="gray-area__title">
+          <span>1개의 할일이 남아있어요</span>
+          <span class="date">2023년 9월 18일</span>
+        </div>
+        <div class="todolist">
+          <div class="todolist__column">
+            <div class="todolist-content">
+              <div class="todolist-content__title">
+                <span>분리수거 하기</span>
+                <button>완료하기</button>
+              </div>
+              <div class="todolist-content__time">
+                <div>
+                  <img src="{{ url_for('static', filename='images/flag.png') }}" alt="" />
+                  <span>오후 7시 까지 완료</span>
+                </div>
+                <span>마감까지 4시간 남았어요</span>
+              </div>
+              <div class="todolist-content__bar">
+                <div class="todolist-content__bar__color"></div>
+              </div>
+            </div>
+            <div class="todolist-content">
+              <div class="todolist-content__title">
+                <span>분리수거 하기</span>
+                <button>완료하기</button>
+              </div>
+              <div class="todolist-content__time">
+                <div>
+                  <img src="{{ url_for('static', filename='images/flag.png') }}" alt="" />
+                  <span>오후 7시 까지 완료</span>
+                </div>
+                <span>마감까지 4시간 남았어요</span>
+              </div>
+              <div class="todolist-content__bar">
+                <div class="todolist-content__bar__color"></div>
+              </div>
+            </div>
+            <div class="todolist-content">
+              <div class="todolist-content__title">
+                <span>분리수거 하기</span>
+                <button>완료하기</button>
+              </div>
+              <div class="todolist-content__time">
+                <div>
+                  <img src="{{ url_for('static', filename='images/flag.png') }}" alt="" />
+                  <span>오후 7시 까지 완료</span>
+                </div>
+                <span>마감까지 4시간 남았어요</span>
+              </div>
+              <div class="todolist-content__bar">
+                <div class="todolist-content__bar__color"></div>
+              </div>
+            </div>
+          </div>
+          <div class="todolist__column">
+            <div class="scroll-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="todolist-roommate__title">
+        <div>New</div>
+        <span>룸메이트가 할일을 완료 했어요</span>
+      </div>
+      <div class="todolist-roommate__list">
+        <div class="todolist-roommate__content">
+          <img class="exit-btn" src="{{ url_for('static', filename='images/icon_close.png') }}" alt="" />
+          <img
+            class="roommate-todo-image"
+            src="{{ url_for('static', filename='images/roommate-todo.png') }}"
+            alt=""
+          />
+          <span>분리수거 완료</span>
+          <button>확인</button>
+        </div>
+        <div class="todolist-roommate__content">
+          <img class="exit-btn" src="{{ url_for('static', filename='images/icon_close.png') }}" alt="" />
+          
+            <img class="roommate-todo-image" src="{{ url_for('static', filename='images/roommate-todo.png') }}" alt="" />
+            
+          <span>분리수거 완료</span>
+          <button>확인</button>
+        </div>
+        <div class="todolist-roommate__content">
+          <img class="exit-btn" src="{{ url_for('static', filename='images/icon_close.png') }}" alt="" />
+          
+            <img class="roommate-todo-image" src="{{ url_for('static', filename='images/roommate-todo.png') }}" alt="" />
+            
+          <span>분리수거 완료</span>
+          <button>확인</button>
+        </div>
+      </div>
+
+      <div class="purple-area">
+        <div class="calendar-title">
+          <span>2023년 9월</span>
+          <div class="calendar-title__btn">
+            <img src="{{ url_for('static', filename='images/arrow-L.png') }}" alt="" />
+            <span>이전</span>
+          </div>
+          <div class="calendar-title__btn">
+            <span>다음</span>
+            <img src="{{ url_for('static', filename='images/arrow-R.png') }}" alt="" />
+          </div>
+        </div>
+
+        <div class="calendar">
+          <div class="calendar-date__selected">
+            <span>18</span>
+            <span>월</span>
+          </div>
+          <div class="calendar-date">
+            <span>19</span>
+            <span>화</span>
+          </div>
+          <div class="calendar-date">
+            <span>20</span>
+            <span>수</span>
+          </div>
+          <div class="calendar-date">
+            <span>21</span>
+            <span>목</span>
+          </div>
+          <div class="calendar-date">
+            <span>22</span>
+            <span>금</span>
+          </div>
+          <div class="calendar-date">
+            <span>23</span>
+            <span>토</span>
+          </div>
+          <div class="calendar-date">
+            <span>24</span>
+            <span>일</span>
+          </div>
+        </div>
+        <div class="todaytask">
+          <div class="todaytask__task">
+            <span>분리수거 하기</span>
+            <div class="todaytask__time">
+              <img
+                src="{{ url_for('static', filename='images/flag.png') }}"
+                alt=""
+                class="todaytask__time-flag"
+              />
+              <span>오후 7시 까지 완료</span>
+            </div>
+          </div>
+          <div class="todaytask__task">
+            <span>분리수거 하기</span>
+            <div class="todaytask__time">
+              <img
+                src="{{ url_for('static', filename='images/flag.png') }}"
+                alt=""
+                class="todaytask__time-flag"
+              />
+              <span>오후 7시 까지 완료</span>
+            </div>
+          </div>
+          <div class="todaytask__task">
+            <span>분리수거 하기</span>
+            <div class="todaytask__time">
+              <img
+                src="{{ url_for('static', filename='images/flag.png') }}"
+                alt=""
+                class="todaytask__time-flag"
+              />
+              <span>오후 7시 까지 완료</span>
+            </div>
+          </div>
+          <div class="todaytask__task">
+            <span>분리수거 하기</span>
+            <div class="todaytask__time">
+              <img
+                src="{{ url_for('static', filename='images/flag.png') }}"
+                alt=""
+                class="todaytask__time-flag"
+              />
+              <span>오후 7시 까지 완료</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 규격 설정 -->
+    <div class="menu">
+      <div class="menu-details">
+        <li class="homebtn">
+          <a href="{{ url_for('buttonHome') }}">
+            <img
+              src="{{ url_for('static', filename='images/todaybtn1.png') }}"
+              alt="투데이 화면 버튼"
+              width="31px"
+              height="44px"
+          /></a>
+        </li>
+        <li class="matebtn">
+          <a href="{{ url_for('buttonMate') }}">
+            <img
+              src="{{ url_for('static', filename='images/matebtn2.png') }}"
+              alt="메이트 화면 버튼"
+              width="31px"
+              height="44px"
+          /></a>
+        </li>
+        <li class="communitybtn">
+          <a href="{{ url_for('buttonCommunity') }}">
+            <img
+              src="{{ url_for('static', filename='images/communitybtn2.png') }}"
+              alt="커뮤니티 화면 버튼"
+              width="41px"
+              height="44px"
+          /></a>
+        </li>
+        <li class="profilebtn">
+          <a href="{{ url_for('Profile') }}">
+            <img
+              src="{{ url_for('static', filename='images/profilebtn2.png') }}"
+              alt="프로필 화면 버튼"
+              width="31px"
+              height="44px"
+          /></a>
+        </li>
+      </div>
+    </div>
+    <!-- 네비게이션 바 규격 설정 -->
+  </body>
+</html>

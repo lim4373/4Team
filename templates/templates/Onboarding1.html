@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Onboarding1.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="Onboarding">
+        <!-- <img
+          src="../static/images/onboarding1.png"
+          alt="온보딩1"
+          width="375px"
+          height="812px"
+        /> -->
+      </div>
+      <div id="nextpage">
+          <a href="{{ url_for('onboarding2') }}">
+          <img
+            src="{{ url_for('static', filename='images/nextpage.png') }}"
+            alt="다음으로 넘어가기"
+            width="375px"
+            height="89px"
+        /></a>
+      </div>
+    </div>
+    <!-- <script src="../static/js/Splash.js"></script> -->
+  </body>
+</html>

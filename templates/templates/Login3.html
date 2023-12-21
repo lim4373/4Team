@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login3.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- header 규격 설정 -->
+      <div id="header">
+        <div id="header_left">
+          <a href="{{ url_for('L2') }}">
+            <img
+              src="{{ url_for('static', filename='images/Login_arrow.png') }}"
+              alt="뒤로가기"
+              width="7px"
+              height="14px"
+            />
+          </a>
+        </div>
+        <p id="header_title">회원가입</p>
+      </div>
+      <!-- header 규격 설정 -->
+
+      <!-- 로그인 설명 규격 설정 -->
+      <div id="information">
+        <div id="number">3/4</div>
+        <div id="detail_infor">
+          기본적으로 필요한<br />정보를 입력해 주세요.
+        </div>
+      </div>
+      <!-- 로그인 설명 규격 설정 -->
+  <form action="/Login3/submit" method="post" onsubmit="submitForm()">
+      <!-- 이름 입력 -->
+      <div id="name">
+        <div id="name_title">이름</div>
+        <input
+          type="text"
+          placeholder="이름을 입력해 주세요."
+          id="write_name"
+          oninput="checkInputs()"
+          name="Pname"
+        />
+      </div>
+      <!-- 이름 입력 -->
+
+      <!-- 성별, 생년월일 입력 -->
+
+      <div id="category_title">
+        <div id="left">성별</div>
+        <div id="right">생년월일</div>
+      </div>
+
+      <div id="category_input">
+        <div id="left_button">
+          <button id="button1" class="button" onclick="selectButton(1)" type="button">
+            여
+          </button>
+          <button id="button2" class="button" onclick="selectButton(2)" type="button">
+            남
+          </button>
+          <div id="right_input">
+            <input
+              type="text"
+              placeholder="생년월일(YYMMDD)"
+              id="numberInput"
+              oninput="checkInputs()"
+              oninput="validateNumberInput(this)"
+            />
+          </div>
+        </div>
+
+        <script>
+          function checkInputs() {
+            // 각각의 input 요소에서 값 가져오기
+            var input1Value = document.getElementById('write_name').value;
+            var input2Value = document.getElementById('numberInput').value;
+            var myButton = document.getElementsByClassName('confirm')[0];
+        
+            // 두 input 중 하나라도 값이 있으면 버튼 활성화, 아니면 비활성화
+            if (input1Value.trim() !== '' && input2Value.trim() !== '') {
+              myButton.id="btnActive"
+              myButton.disabled = false;
+            } else {
+              myButton.id="btnDisabled"
+              myButton.disabled = true;
+            }
+          }
+          function selectButton(selectedButton) {
+            // 모든 버튼에서 'selected' 클래스 제거
+            document.getElementById("button1").classList.remove("selected");
+            document.getElementById("button2").classList.remove("selected");
+
+            // 선택된 버튼에 'selected' 클래스 추가
+            document
+              .getElementById(`button${selectedButton}`)
+              .classList.add("selected");
+          }
+          function validateNumberInput(input) {
+            // 입력된 값이 숫자가 아니면 제거
+            input.value = input.value.replace(/[^0-9]/g, "");
+          }
+          
+        </script>
+      </div>
+      <!-- 성별, 생년월일 입력 -->
+
+      <!-- 버튼 규격 설정 -->
+      <div class="btn">
+        <a href="{{ url_for('L4') }}">
+          <button
+            type="submit"
+            class="confirm"
+            id="btnDisabled"
+            onclick="submitForm()"
+          >
+            다음
+          </button>
+        </a>
+      </div>
+      <!-- 버튼 규격 설정 -->
+    </div>
+  </form>
+  </body>
+</html>

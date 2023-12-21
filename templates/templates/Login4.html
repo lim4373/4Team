@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login4.css') }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <title>roomik</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- header 규격 설정 -->
+      <div id="header">
+        <div id="header_left">
+          <a href="{{ url_for('L3') }}">
+            <img
+              src="{{ url_for('static', filename='images/Login_arrow.png') }}"
+              alt="뒤로가기"
+              width="7px"
+              height="14px"
+            />
+          </a>
+        </div>
+        <p id="header_title">회원가입</p>
+      </div>
+      <!-- header 규격 설정 -->
+
+      <!-- 로그인 설명 규격 설정 -->
+      <div id="information">
+        <div id="number">4/4</div>
+        <div id="detail_infor">
+          기본적으로 필요한<br />학적 정보를 입력해 주세요.
+        </div>
+      </div>
+      <!-- 로그인 설명 규격 설정 -->
+
+      <!-- 학교 또는 기숙사 입력 -->
+      <div id="place">
+        <div id="place_title">학교 또는 기숙사 입력</div>
+        <input
+          type="text"
+          placeholder="기숙사 찾기"
+          id="find_place"
+          oninput="checkInputs()"
+        />
+      </div>
+      <!-- 학교 또는 기숙사 입력 -->
+
+      <!-- 학번 입력 -->
+      <div id="school_number">
+        <div id="number_title">학번 입력</div>
+        <input
+          type="text"
+          placeholder="학번을 입력해 주세요."
+          id="number_write"
+          oninput="checkInputs(this)"
+        />
+      </div>
+
+      <script>
+        function checkInputs(input) {
+          // 각각의 input 요소에서 값 가져오기
+          var input1Value = document.getElementById('find_place').value;
+          var input2Value = document.getElementById('number_write').value;
+          var myButton = document.getElementsByClassName('confirm')[0];
+      
+  
+          input.value = input.value.replace(/[^0-9]/g, "");
+  
+          // 두 input 중 하나라도 값이 있으면 버튼 활성화, 아니면 비활성화
+          if (input1Value.trim() !== '' && input2Value.trim() !== '') {
+            myButton.id="btnActive"
+            myButton.disabled = false;
+            document.getElementById('nextLink').href = "{{ url_for('L5') }}";
+          } else {
+            myButton.id="btnDisabled"
+            myButton.disabled = true;
+            document.getElementById('nextLink').removeAttribute('href');
+          }
+        }
+      </script>
+      <!-- 학번 입력 -->
+
+      <!-- 버튼 규격 설정 -->
+      <div class="btn">
+        <a id="nextLink" href="{{ url_for('L5') }}">
+          <button
+            type="submit"
+            class="confirm"
+            id="btnDisabled"
+            onclick="submitForm()"
+          >
+            다음
+          </button>
+        </a>
+      </div>
+      
+      <!— 버튼 규격 설정 —>
+    </div>
+  </body>
+</html>
