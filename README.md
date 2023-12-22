@@ -9,7 +9,7 @@
 
 ## 🖥️ **4Team Screen shots**
 
-(https://github.com/lim4373/4Team/assets/114973162/de3a942f-9194-479c-aa73-66a28b78d4e2)
+https://github.com/lim4373/4Team/assets/114973162/de3a942f-9194-479c-aa73-66a28b78d4e2
 <br>
 
 
