@@ -1,7 +1,7 @@
 # **2023 멋쟁이사자처럼 : 4조**
 
 <br><br>
-<img src="![Uploading 1111_page-0001.jpg…]()">
+<img src="https://github.com/lim4373/4Team/issues/4#issue-2053611720">
 
 
 <br>
