@@ -4,9 +4,10 @@
 <img src="https://github.com/lim4373/4Team/issues/3#issue-2053606199">
 
 
-
-## 🖥️ **Feature Screen shots**
+<br>
+## 🖥️ **4Team Screen shots**
 
 |<img src="[https://github.com/lim4373/4Team/issues/1#issue-2053603422">|
 |------|
-|<div align="center">**PSG analysis**</div>|
+|<div align="center">**4Team**</div>|
+<br>
