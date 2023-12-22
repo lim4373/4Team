@@ -9,7 +9,7 @@
 
 ## 🖥️ **4Team Screen shots**
 
-|<img src="[https://github.com/lim4373/4Team/issues/1#issue-2053603422">|
+|<img src=https://github.com/lim4373/4Team/assets/114973162/3cff3a76-3cfd-43b1-9699-a0354fa6b8c8>|
 |------|
 |<div align="center">**4Team**</div>|
 <br>
